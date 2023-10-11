@@ -33,8 +33,8 @@ public class Fraction {
 	}
 	
 	public Fraction subtract(Fraction other){
-			int n = this.numerator*other.denominator + this.denominator*other.numerator;
-		int d = this.denominator * other.getDenom();
+			int n = this.numerator*other.denominator - this.denominator*other.numerator;
+		int d = this.denominator*other.getDenom();
 		Fraction result = new Fraction (n,d);
 		return result;
 	
@@ -48,8 +48,8 @@ public class Fraction {
 		return result;
 	}
 	
-	public void toString(){
-		System.out.println(this.numerator + "/" + this.denominator);
+	public String toString(){
+		return numerator + "/" + denominator;
 	}
 	
 	public Fraction reciprocal(){
@@ -71,12 +71,19 @@ public class Fraction {
 		Fraction f4 = f1.subtract(f2);
 		System.out.println(f1 + " - " + f2 + " = " + f4);
 		
-		f1.multiply(f2);
-		f2.reciprocal();
-		Fraction f5 = new Fraction(4,5);
-		Fraction f6 = new Fraction(2,5);
-		f5.add(f6);
-		f5.toString();
+		Fraction f5 = f1.multiply(f2);
+		System.out.println(f1 + " * " + f2 + " = " + f5);
+		
+		//System.out.println(f5.reciprocal());
+		System.out.println((f5.reciprocal()) + " is the reciprocal of " + f5);
+
+		
+		Fraction f7 = new Fraction(6,5);
+		Fraction f8 = new Fraction(2,5);
+		Fraction f9 = f7.add(f8);
+		//System.out.println(f7);
+		//System.out.println(f8);
+		System.out.println(f7 + " + " + f8 + " = " + f9);
 			
 		
 

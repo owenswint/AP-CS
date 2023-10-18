@@ -89,8 +89,8 @@ public class PollDisplayPanel extends JPanel
     {
       int redDegrees;
       g.setColor(Color.RED);
-      degrees = countToDegrees(count1, total);
-      drawSector(g, x, y, r, fromDegree, degrees);
+      redDegrees = countToDegrees(count1, total);
+      drawSector(g, x, y, r, fromDegree, redDegrees);
       fromDegree += redDegrees;
 
       int greenDegrees;
@@ -143,8 +143,9 @@ public class PollDisplayPanel extends JPanel
   // corresponds to count / total, rounded to the nearest integer.
   private int countToDegrees(int count, int total)
   {
+  if (total > 0);
   return (int)(((double) count / total) * 360);
-
+  return 0;
   }
 
 

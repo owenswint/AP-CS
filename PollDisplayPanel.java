@@ -145,7 +145,6 @@ public class PollDisplayPanel extends JPanel
   {
   if (total > 0);
   return (int)(((double) count / total) * 360);
-  return 0;
   }
 
 

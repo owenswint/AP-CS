@@ -47,12 +47,24 @@ public class AtBat{
     }
 
     public boolean onesDigitSame(int n1, int n2, int n3){
-        
+        if ( n1%10 == n2%10 || n1%10 == n3%10 || n2%10 == n3%10){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-
-
-
+    public int blackjack(int n1, int n2){
+        int betterNum = 0;
+        if (n1 <= 21){
+            betterNum = n1;
+        }
+        if (n2 > n1 && n2 <= 21){
+            betterNum = n2;
+        }
+        return betterNum;
+    }
 
 
     public static void main(String[] args){
@@ -89,6 +101,21 @@ public class AtBat{
         System.out.println(ab.setAlarm(6, true));
         System.out.println();
 
+        System.out.println(ab.onesDigitSame(23, 19, 13));
+        System.out.println(ab.onesDigitSame(23, 19, 12));
+        System.out.println(ab.onesDigitSame(23, 19, 3));
+        System.out.println(ab.onesDigitSame(423, 13, 3));
+        System.out.println(ab.onesDigitSame(23, 29, 25));
+        System.out.println();
+
+        System.out.println(ab.blackjack(19, 21));
+        System.out.println(ab.blackjack(21, 19));
+        System.out.println(ab.blackjack(19, 22));
+        System.out.println(ab.blackjack(8, 8));
+        System.out.println(ab.blackjack(25, 24));
+        System.out.println(ab.blackjack(17, 9));
+        System.out.println(ab.blackjack(12, 18));
+
 
 
 
@@ -96,4 +123,3 @@ public class AtBat{
 
 
 }
-

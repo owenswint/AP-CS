@@ -17,13 +17,13 @@ public class CondEx{
 
     public boolean isSooner(int month1, int day1, int year1, int month2, int day2, int year2){
         if (year1 != year2){
-            return year1<year2;
+            return year1>year2;
         }
         else if (month1 != month2){
-            return month1<month2;
+            return month1>month2;
         }
         else {
-            return day1<day2;
+            return day1>day2;
         }
     }
 
@@ -32,20 +32,22 @@ public class CondEx{
         if ((size1+size2)<= space){
             return 3;
         }
-        else if (size2 > size1){
-            if (size2 <= space){
-                return 2;
-            }
+        else if ((size2 > size1)&&(size2<=space)){
+            return 2;
+            
+        }
+        else if ((size1 > size2)&&(size1<=space)){
+            return 1;
+        }
+        else if (size2 <= space){
+            return 2;
         }
         else if (size1 <= space){
             return 1;
-            }
-        else{
-            return 0;
         }
+
         return 0;  
-        
-        
+                
     }
 
     public boolean makeBenches(int small, int big, int goal){

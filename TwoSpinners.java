@@ -10,7 +10,7 @@ public class TwoSpinners{
  	{
      	    int result=0;
      	    //add code here
-            result = math.random(min,max);
+            result = (int) (Math.random()*(max-min)) + min;
     	    return result;
  	}
 
@@ -22,10 +22,10 @@ public class TwoSpinners{
         int player = spin(1,10);
         int computer = spin(2,8);
         if (player > computer){
-            System.out.println("You win! 3 points");
+            System.out.println("You win! " + (player - computer) + " points");
         }
         else if (computer > player){
-            System.out.println("You lose. -4 points");
+            System.out.println("You lose. " + (player - computer) + " points");
         }
         else if (computer == player){
             player = spin(1,10);
@@ -46,6 +46,7 @@ public class TwoSpinners{
      	  TwoSpinners ds = new TwoSpinners();
      	      for(int i = 0; i < 10; i++){    //This will save you time by running playground 10 times
          		ds.playRound();
+
      	      }
  	  }
 

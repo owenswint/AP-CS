@@ -1,11 +1,11 @@
 public class Whileloops{
 
     public int addOdds(int n){
-        int count = 1;
+        int cnt = 1;
         int sum = 0;
-        while (count <= n){
-            sum += count;
-            count += 2;
+        while (cnt <= n){
+            sum += cnt;
+            cnt += 2;
             
         }
         return sum;
@@ -48,31 +48,17 @@ public class Whileloops{
 
      public boolean isPerfectSquare(int n){
         int sum = 0;
-        
+        int count = 1;
 
-        while (sum <=n){
-
+        while (sum < n){
+        sum += count;
+        count += 2;
         }
 
-        if (sum == n){
-            return true;
-        }
-        return false;
+       return sum == n;
 
         
      }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   public static void main(String[] args)
@@ -81,8 +67,8 @@ public class Whileloops{
     System.out.println(wl.addOdds(9));
     System.out.println(wl.addOdds(0));
     System.out.println(wl.addOdds(1));
-    System.out.println(wl.addOdds(67));
-    System.out.println(wl.addOdds(327));
+    System.out.println(wl.addOdds(21));
+    System.out.println(wl.addOdds(16));
     System.out.println();
 
     System.out.println(wl.sumDigits(183));
@@ -107,8 +93,6 @@ public class Whileloops{
     System.out.println(wl.isPerfectSquare(43));
     System.out.println(wl.isPerfectSquare(17));
     System.out.println();
-
-
 
   }
 }

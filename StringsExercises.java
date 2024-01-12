@@ -6,7 +6,14 @@ public class StringsExercises {
         return f;
     }
 
-    public 
+    public String convertName(String name){
+        String f = new String();
+        name  += (" ");
+        int space = name.indexOf(" ");
+        f += (name.substring(space+1) + name.substring(0, space-1));
+        return f;
+
+    }
 
 
 
@@ -16,6 +23,14 @@ public class StringsExercises {
         System.out.println(se.scroll("Hello World"));
         System.out.println(se.scroll("happy"));
         System.out.println(se.scroll("h"));
+        System.out.println();
+
+        System.out.println(se.convertName(" Reubenstein, Lori Renee  	"));
+        System.out.println(se.convertName("Biden,Joe"));
+        System.out.println(se.convertName("the Clown, Bozo"));
+
+        
+
     }
 
 }

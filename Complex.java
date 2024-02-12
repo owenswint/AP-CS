@@ -27,6 +27,11 @@ public class Complex{
         return result; 
     }
 
+    public Complex add(Double n){
+        Complex result = new Complex(this.a+n, this.b);
+        return result; 
+    }
+
     public Complex multiply(Complex other){
         double sumA = 0; 
         double sumB = 0;
@@ -37,6 +42,15 @@ public class Complex{
         sumB+= this.b*other.a;
 
         Complex result = new Complex(sumA, sumB);
+        return result;
+
+    }
+
+    public Complex multiply(Double n){
+        double sumA = 0; 
+        sumA += this.a*n;
+
+        Complex result = new Complex(sumA,this.b);
         return result;
 
     }
@@ -54,11 +68,17 @@ public class Complex{
         System.out.println(c1.add(c2));
         System.out.println(c3.add(c4));
         System.out.println(c5.add(c6));
+        System.out.println(c1.add(5.0));
+        System.out.println(c3.add(2.5));
+        System.out.println(c5.add(7.0));
         System.out.println("\n");
 
         System.out.println(c1.multiply(c2));
         System.out.println(c3.multiply(c4));
         System.out.println(c5.multiply(c6));
+        System.out.println(c1.multiply(2.0));
+        System.out.println(c3.multiply(1.5));
+        System.out.println(c5.multiply(6.0));
         System.out.println("\n");
 
         System.out.println(c1.abs());

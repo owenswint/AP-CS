@@ -27,6 +27,7 @@ public class GradeAverage {
             total += (double)scores[i];
         }
         double denom = (last-first)+1;
+
 		return ((double)total)/denom;    // replace this
 	}
 	
@@ -50,11 +51,10 @@ public class GradeAverage {
 	{
 		// part c
         boolean b = showsImprovement();
-        if(b = false){
+        if(b == false){
             return mean(0, scores.length-1);
         }
         return mean(scores.length/2, scores.length-1);
-
 		
 	}
 	public static void main(String[] args) {

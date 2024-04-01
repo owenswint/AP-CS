@@ -3,14 +3,15 @@ import java.util.ArrayList;
 /*
 The ScantArray class represents a 2D array with few non-zero
 entries.  It contains a list of ScantArrayEntry objects, each
-of which represents one of the  elements are stored in the
+of which represents one of the non-zero elements in the array.
+The entries representing the non-zero elements are stored in the
 list in no particular order.  Each non-zero element is represented
 by exactly one entry in the list.
  */
 
 public class ScantArray {
     /** number of rows and columns in the list */
-    private int nuRows;
+    private int numRows;
     private int numColumns;
 
     /** The list of entries representing the non-zero elements of
@@ -30,7 +31,8 @@ public class ScantArray {
     public int getNumColumns(){return numColumns;}
 
     /** Adds a new entry to the array */
-    public void addEntry(int rotry(row, col, val));
+    public void addEntry(int row, int col, int val){
+        entries.add(new ScantArrayEntry(row, col, val));
     }
 
     /** Returns the value of the element at position (row, column)
@@ -39,7 +41,7 @@ public class ScantArray {
      * @param col
      * @return   the value in the array
      * Precondition:  0 <= row < getNumRows()
-     *                0 <= c< getNumColumns()
+     *                0 <= col < getNumColumns()
      */
     public int getValueAt(int row, int col){
         /* part a */
@@ -84,7 +86,11 @@ public class ScantArray {
 
     public static void main(String[] args){
         ScantArray sa1 = new ScantArray(4,5);
-        sa1.addEntry(
+        sa1.addEntry(1,4,4);
+        sa1.addEntry(2,0,1);
+        sa1.addEntry(3,1,-9);
+        sa1.addEntry(1,1,5);
+
         System.out.println(sa1.getValueAt(2,0));
         System.out.println(sa1.getValueAt(3,1));
         System.out.println(sa1.getValueAt(2,3));

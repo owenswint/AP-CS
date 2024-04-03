@@ -45,9 +45,14 @@ public class ScantArray {
      */
     public int getValueAt(int row, int col){
         /* part a */
-        
-		
-		
+
+        for (int i = 0; i < entries.size(); i++){
+            if(entries.get(i).getRow() == row && entries.get(i).getColumn() == col){
+                return entries.get(i).getValue();
+
+            }
+        }
+
         return 0;    // replace this
     }
 
@@ -59,7 +64,18 @@ public class ScantArray {
      */
     public void removeColumn(int col){
         /* part b */
-        
+        for (int i = 0; i < entries.size(); i++){
+            
+            if(entries.get(i).getColumn() > col){
+                entries.set(i, new ScantArrayEntry(entries.get(i).getRow(), entries.get(i).getColumn() - 1, entries.get(i).getValue()));
+                numColumns--;
+            }
+            if (entries.get(i).getColumn() == col){
+                entries.remove(i);
+                i--;
+            }
+
+        }
 		
 		
 		
@@ -77,10 +93,12 @@ public class ScantArray {
     public String toString(){
         /* part c */
         String s = "";
-
-        
-		
-		
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numColumns; j++) {
+                s += getValueAt(i, j) + " ";
+            }
+            s += "\n";
+        }
         return s;
     }
 
@@ -101,6 +119,27 @@ public class ScantArray {
 
         sa1.removeColumn(1);
         System.out.println(sa1);
+
+        ScantArray sa2 = new ScantArray(4,5);
+        sa2.addEntry(1,4,4);
+        sa2.addEntry(2,0,1);
+        sa2.addEntry(3,1,-9);
+        sa2.addEntry(2,2,1);
+        sa2.addEntry(3,3,7);
+        sa2.addEntry(4,2,9);
+        sa2.addEntry(2,4,-5);
+
+
+        System.out.println(sa2.getValueAt(2,0));
+        System.out.println(sa2.getValueAt(3,1));
+        System.out.println(sa2.getValueAt(2,3));
+        System.out.println("rows "+ sa2.getNumRows());
+        System.out.println("columns "+ sa2.getNumColumns());
+
+        System.out.println(sa2);
+
+        sa2.removeColumn(2);
+        System.out.println(sa2);
 
         /******* please add one more test of your own *******/
     }
